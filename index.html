@@ -22,6 +22,26 @@
             width: 100%; /* Ширина ссылки на всю ширину */
             position: relative; /* Для размещения контента */
         }
+        #scrollTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 24px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            display: none; /* Скрываем кнопку изначально */
+        }
+        #scrollTop:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -34,6 +54,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <h3 class="card-title">Лига чемпионов</h3>
                 <li class="nav-item">
                     <a class="nav-link" href="#cards-section">Карточки</a> <!-- Переход на секцию карточек -->
                 </li>
@@ -72,8 +93,30 @@
             <span class="sr-only">Следующий</span>
         </a>
     </div>
+</div>
 
- <!-- Секция 2: Карточки -->
+<!-- Кнопка для прокрутки вверх -->
+<div id="scrollTop">↑</div>
+
+<script>
+    // Показывать/скрывать стрелку
+    window.onscroll = function() {
+        var scrollTopButton = document.getElementById("scrollTop");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopButton.style.display = "block";
+        } else {
+            scrollTopButton.style.display = "none";
+        }
+    };
+
+    // Прокрутка вверх при нажатии на стрелку
+    document.getElementById("scrollTop").onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+
+</body>
+</html><!-- Секция 2: Карточки -->
 <div id="cards-section" class="row mt-4">
     <div class="col-md-4">
         <div class="card">
@@ -100,7 +143,7 @@
             <img src="https://i.ytimg.com/vi/-fSoj4x5Jg4/maxresdefault.jpg" class="card-img-top" alt="Карточка 3">
             <div class="card-body">
                 <h5 class="card-title">Криштиа́ну Рона́лду</h5>
-                <p class="card-text">Криштиа́ну Рона́лду душ Са́нтуш Аве́йру родился 5 февраля 1985, Фуншал, Португалия — португальский футболист, нападающий и капитан саудовского клуба «Ан-Наср» и сборной Португалии. Чемпион Европы, пятикратный победитель Лиги чемпионов УЕФА. Считается одним из лучших футболистов всех времён.</p>
+                <p class="card-text">Криштиа́ну Рона́лду душ Са́нтуш Аве́йру родился 5 февраля 1985, Фуншал, Португалия — португальский футболист, нападающий и капитан саудовского клуба «Ан-Наср» и сборной Португалии. Чемпион Европы,ы прокрутите страницу вниз, кнопка будет появляться, и при нажатии на нее страница будет плавно прокручиваться вверх.пятикратный победитель Лиги чемпионов УЕФА. Считается одним из лучших футболистов всех времён.</p>
                 <a href="#collapseThree" class="btn btn-primary" data-toggle="collapse" data-target="#collapseThree">Узнать больше</a>
             </div>
         </div>
@@ -159,7 +202,7 @@
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-                Криштиа́ну Рона́лду душ Са́нтуш Аве́йру (порт. Cristiano Ronaldo dos Santos Aveiro; род. 5 февраля 1985, Фуншал, Португалия) — португальский футболист, нападающий и капитан саудовского клуба «Ан-Наср» и сборной Португалии. Чемпион Европы, пятикратный победитель Лиги чемпионов УЕФА. Считается одним из лучших футболистов всех времён.
+                  Криштиа́ну Рона́лду душ Са́нтуш Аве́йру (порт. Cristiano Ronaldo dos Santos Aveiro; род. 5 февраля 1985, Фуншал, Португалия) — португальский футболист, нападающий и капитан саудовского клуба «Ан-Наср» и сборной Португалии. Чемпион Европы, пятикратный победитель Лиги чемпионов УЕФА. Считается одним из лучших футболистов всех времён.
 
 Рекордсмен по количеству матчей, сыгранных за национальную сборную, лучший бомбардир в истории футбола по данным МФФИИС и четвёртый по данным RSSSF[англ.], самый результативный футболист на уровне сборных. Признан Португальской футбольной федерацией лучшим игроком в истории португальского футбола. Первый футболист в истории, которому удалось выиграть английскую Премьер-лигу, испанскую Примеру и итальянскую Серию A. Признавался лучшим игроком и бомбардиром сезона в каждом из этих турниров.
 
@@ -171,9 +214,7 @@
             </div>
         </div>
     </div>
-</div>
-
-<script>
+</div><script>
     document.querySelectorAll('.btn-primary').forEach(button => {
         button.addEventListener('click', function(event) {
             const targetId = this.getAttribute('data-target');
