@@ -3,29 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пример страницы с Bootstrap</title>
-    <!-- Подключение Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Лига чемпионов</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://avatars.mds.yandex.net/i?id=c374ca308e4ff0e09640e9694056b318_l-5009205-images-thumbs&n=13'); /* Замените на URL вашего изображения */
+            background-size: cover; /* Полное покрытие фона */
+            background-position: center; /* Центрирование изображения */
+        }
+        .content {
+            position: relative; /* Для корректной работы ссылки */
+            z-index: 1; /* Убедитесь, что контент выше фона */
+        }
+        a.full-background-link {
+            display: block; /* Делает ссылку блочным элементом */
+            height: 100vh; /* Высота ссылки на весь экран */
+            width: 100%; /* Ширина ссылки на всю ширину */
+            position: relative; /* Для размещения контента */
+        }
+    </style>
 </head>
 <body>
 
 <!-- Шапка сайта -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Лига чемпионов</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                    <a class="nav-link" href="#cards-section">Карточки</a> <!-- Переход на секцию карточек -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">О нас</a>
+                    <a class="nav-link" href="#footer">Контакты</a> <!-- Переход на секцию футера -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Контакты</a>
+                    <a class="nav-link" href="#footer">Социальные сети</a> <!-- Переход на секцию футера -->
                 </li>
             </ul>
         </div>
@@ -58,15 +74,15 @@ ol-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         </a>
     </div>
 
-    <!-- Секция 2: Карточки -->
-    <div class="row mt-4">
+ <!-- Секция 2: Карточки -->
+    <div id="cards-section" class="row mt-4">
         <div class="col-md-4">
             <div class="card">
                 <img src="https://sun9-65.userapi.com/impf/c830400/v830400518/b5d45/FTZ32GZZCQA.jpg?size=604x340&quality=96&sign=c4d2c0b8b5e69b95fa40fd1db3807370&c_uniq_tag=JgKcJZJLpyDH6-u8oRnwNitIGka1tmv3ACP1uwUaYko&type=album" class="card-img-top" alt="Карточка 1">
                 <div class="card-body">
                     <h5 class="card-title">Лионе́ль Ме́сси</h5>
                     <p class="card-text">Лионе́ль Андре́с Ме́сси Куччитти́ни родился 24 июня 1987, Росарио, Аргентина — аргентинский футболист, нападающий и капитан клуба MLS «Интер Майами», капитан сборной Аргентины. Чемпион мира, двукратный обладатель Кубка Америки, олимпийский чемпион. Считается одним из лучших футболистов всех времён.</p>
-                    <a href="https://ru.wikipedia.org/wiki/Месси,_Лионель" class="btn btn-primary" target="_blank">Узнать больше</a>
+                    <a href="#collapseOne" class="btn btn-primary" data-toggle="collapse">Узнать больше</a>
                 </div>
             </div>
         </div>
@@ -75,8 +91,8 @@ ol-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <img src="https://i.ytimg.com/vi/0-WOsvqfTCU/maxresdefault.jpg" class="card-img-top" alt="Карточка 2">
                 <div class="card-body">
                     <h5 class="card-title">Ро́берт Левандо́вский</h5>
-                    <p class="card-text">Ро́берт Левандо́вский родился 21 августа 1988, Варшава — польский футболист, нападающий испанского клуба «Барселона» и капитан национальной сборной Польши. Участник четырёх чемпионатов Европы (2012, 2016, 2020 и 2024) и двух чемпионатов мира (2018 и 2022). Считается одним из лучших нападающих в мире. Кавалер Командорского креста ордена Возрождения Польши.</p>
-                    <a href="https://ru.wikipedia.org/wiki/Левандовский,_Роберт" class="btn btn-primary" target="_blank">Узнать больше</a>
+                    <p class="card-text">Ро́берт Левандо́вский родился 21 августа 1988, Варшава — польский футболист, нападающий испанского клуба «Барселона» и капитан национальной сборной Польши. Участник четырёх чемпионатов Европы и двух чемпионатов мира. Считается одним из лучших нападающих в мире.</p>
+                    <a href="#collapseTwo" class="btn btn-primary" data-toggle="collapse">Узнать больше</a>
                 </div>
             </div>
         </div>
@@ -86,68 +102,105 @@ ol-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <div class="card-body">
                     <h5 class="card-title">Криштиа́ну Рона́лду</h5>
                     <p class="card-text">Криштиа́ну Рона́лду душ Са́нтуш Аве́йру родился 5 февраля 1985, Фуншал, Португалия — португальский футболист, нападающий и капитан саудовского клуба «Ан-Наср» и сборной Португалии. Чемпион Европы, пятикратный победитель Лиги чемпионов УЕФА. Считается одним из лучших футболистов всех времён.</p>
-                    <a href="https://ru.wikipedia.org/wiki/Криштиану_Роналду" class="btn btn-primary" target="_blank">Узнать больше</a>
+                    <a href="#collapseThree" class="btn btn-primary" data-toggle="collapse">Узнать больше</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Секция 3: Аккордеон -->
-    <div class="accordion mt-4" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Вопрос 1
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    Ответ на вопрос 1.
-                </div>
-            </div>
+
+<!-- Секция 3: Аккордеон -->
+<div class="accordion mt-4" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Лионе́ль Ме́сси
+                </button>
+            </h2>
         </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Вопрос 2
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    Ответ на вопрос 2.
-                </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                Лионе́ль Андре́с Ме́сси Куччитти́ни (исп. Lionel Andrés Messi Cuccittini, испанское произношение: родился 24 июня 1987, Росарио, Аргентина) — аргентинский футболист, нападающий и капитан клуба MLS «Интер Майами», капитан сборной Аргентины. Чемпион мира, двукратный обладатель Кубка Америки, олимпийский чемпион. Считается одним из лучших футболистов всех времён.
+
+Лучший бомбардир в истории чемпионата Испании, «Барселоны», «Интер Майами» и сборной Аргентины. Восьмикратный обладатель «Золотого мяча» и шестикратный — «Золотой бутсы». Воспитанник академии «Барселоны», вместе с этим клубом выиграл десять титулов чемпиона Испании, четыре Лиги чемпионов УЕФА, семь Кубков Испании, восемь Суперкубков Испании, три Суперкубка УЕФА и три чемпионата мира среди клубов. Двукратный чемпион Франции и обладатель Суперкубка Франции в составе «Пари Сен-Жермен».
+
+В возрасте 13 лет вместе с родителями переехал в Испанию, чтобы присоединиться к молодёжной команде «Барселоны», в октябре 2004 года дебютировал за основной состав этого клуба. В течение своих первых лет в «Барселоне» ему удалось стать неотъемлемым игроком стартового состава, а в сезоне 2008/09 Месси вместе с клубом выиграл свой первый «требл» и «Золотой мяч». Он становился обладателем «Золотого мяча» в течение следующих трёх лет и стал первым игроком, получившим эту награду четыре раза подряд. В сезоне 2011/12 Месси установил рекорд по количеству голов, забитых за один сезон в чемпионате Испании, а также во всей Европе. В сезоне 2014/15 он стал лучшим бомбардиром чемпионата Испании за всю историю и во второй раз выиграл «требл» со своим клубом. В 2018 году стал капитаном «Барселоны», а в 2019 году в шестой раз получил «Золотой мяч», установив рекорд по их количеству у одного игрока. В 2021 году контракт аргентинца с «Барселоной» завершился и из-за финансового положения каталонского клуба не был продлён. В связи с этим Месси стал свободным агентом и бесплатно перешёл во французский «Пари Сен-Жермен». В 2022 году побил рекорд немецкого футболиста Лотара Маттеуса по числу матчей на чемпионатах мира.
+
+В составе молодёжной сборной Аргентины Месси стал чемпионом мира 2005 года и в том же году дебютировал за основную сборную Аргентины. В 2007 году на Кубке Америки стал серебряным призёром турнира, а также был признан его лучшим молодым игроком. В составе сборной до 23 лет стал олимпийским чемпионом 2008 года. С 2011 года, уже в качестве капитана сборной, Месси принял участие в трёх финалах крупных турниров подряд: чемпионата мира 2014 года и Кубках Америки 2015 и 2016 годов, однако во всех случаях вместе со своей командой потерпел поражение. В 2016 году объявил о завершении международной карьеры, однако позже вернулся в сборную и принял участие в чемпионате мира 2018 года, а также Кубке Америки 2019, где занял со своей сборной третье место. Затем Месси одержал со своей сборной победу на Кубке Америки 2021, став лучшим бомбардиром, лучшим ассистентом, а также лучшим игроком этого турнира. В 2022 году выиграл Финалиссиму и чемпионат мира.
+
+Считается одним из самых известных спортсменов в мире, с 2006 года является одним из главных рекламных лиц компании Adidas, выпускающей спортивную одежду. С 2008 года является одним из самых высокооплачиваемых футболистов. В 2019 году Forbes признал аргентинца самым высокооплачиваемым спортсменом в мире. Журнал Time включил его в список 100 самых влиятельных людей мира в 2011, 2012 и 2023 годах. В 2020 и 2023 годах Месси был признан лучшим спортсменом года по версии Laureus World Sports Awards, он стал первым футболистом, получившим эту награду. В том же году Forbes назвал Месси вторым в истории футболистом, заработавшим за карьеру более одного миллиарда долларов.
             </div>
         </div>
     </div>
-</div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Ро́берт Левандо́вский
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                Ро́берт Левандо́вский (пол. Robert Lewandowski, польское произношение: род. 21 августа 1988, Варшава) — польский футболист, нападающий испанского клуба «Барселона» и капитан национальной сборной Польши. Участник четырёх чемпионатов Европы (2012, 2016, 2020 и 2024) и двух чемпионатов мира (2018 и 2022). Считается одним из лучших нападающих в мире. Кавалер Командорского креста ордена Возрождения Польши.
+
+Левандовский начал свою карьеру в польских клубах, в составе «Леха» он стал победителем Кубка и Суперкубка Польши, а также чемпионом страны. В 2010 году перешёл в дортмундскую «Боруссию», где дважды подряд становился победителем Бундеслиги. Вместе с дортмундским клубом принял участие в финале Лиги чемпионов 2013 года. В 2014 году, после истечения срока своего контракта с «Боруссией», отправился в «Баварию». В составе этого клуба Левандовский стал чемпионом Германии шесть раз подряд, а также выиграл множество других трофеев. В 2020 году в составе своей команды впервые выиграл «требл» и получил награду The Best FIFA Men’s Player. Левандовский является лучшим иностранным бомбардиром Бундеслиги за всю историю, а также занимает третье место среди всех игроков по мячам, забитым в Лиге чемпионов. Занимает вторую строчку в рейтинге лучших голеадоров мюнхенской «Баварии». В 2015 году Левандовскому удалось установить сразу четыре рекорда в одном матче, когда он за девять минут забил пять мячей в ворота «Вольфсбурга». Эти рекорды были внесены в Книгу рекордов Гиннесса. Проведя в составе «Баварии» восемь сезонов, за которые ему удалось установить множество рекордов результативности и выиграть 16 трофеев внутри Германии, а также Лигу чемпионов УЕФА, Суперкубок УЕФА и Клубный чемпионат мира, в 2022 году перешёл в состав испанской «Барселоны».
+
+Выступает в составе основной сборной Польши с 2008 года, за это время провёл более 140 матчей в её составе. Принял участие на Евро-2012, Евро-2016, чемпионате мира 2018 года, Евро-2020, чемпионате мира 2022 года и Евро-2024. На чемпионате Европы 2016 года дошёл со своей командой до стадии 1/4 финала, что стало лучшим результатом в её истории. Был признан лучшим польским футболистом года рекордные девять раз. Является рекордсменом своей сборной по количеству сыгранных матчей и голов.
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Криштиа́ну Рона́лду
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                Криштиа́ну Рона́лду душ Са́нтуш Аве́йру (порт. Cristiano Ronaldo dos Santos Aveiro; род. 5 февраля 1985, Фуншал, Португалия) — португальский футболист, нападающий и капитан саудовского клуба «Ан-Наср» и сборной Португалии. Чемпион Европы, пятикратный победитель Лиги чемпионов УЕФА. Считается одним из лучших футболистов всех времён.
+
+Рекордсмен по количеству матчей, сыгранных за национальную сборную, лучший бомбардир в истории футбола по данным МФФИИС и четвёртый по данным RSSSF[англ.], самый результативный футболист на уровне сборных. Признан Португальской футбольной федерацией лучшим игроком в истории португальского футбола. Первый футболист в истории, которому удалось выиграть английскую Премьер-лигу, испанскую Примеру и итальянскую Серию A. Признавался лучшим игроком и бомбардиром сезона в каждом из этих турниров.
+
+Начал профессиональную карьеру в португальском клубе «Спортинг», в 2003 году перешёл в английский «Манчестер Юнайтед», в 2009 году — в испанский «Реал Мадрид» (сумма этого трансфера до 2013 года была рекордной за всю историю футбола), в 2018 году — в итальянский «Ювентус». Неоднократно становился обладателем «Золотого мяча» France Football (2008, 2016, 2017), «Золотого мяча» ФИФА (2013, 2014) и «Золотой бутсы» (2008, 2011, 2014, 2015). Является рекордсменом по количеству проведённых матчей в еврокубках, лучшим бомбардиром европейских турниров за всё время, лучшим ассистентом в истории Лиги чемпионов УЕФА и рекордные семь раз становился лучшим бомбардиром сезона в Лиге чемпионов УЕФА, шесть из которых — подряд: в 2008, а также в 2013, 2014, 2015[b], 2016, 2017 и 2018 годах. После третьей подряд победы в Лиге чемпионов в составе «Реал Мадрида» стал первым игроком, выигравшим этот трофей пять раз.
+
+За национальную сборную Португалии провёл 213 матчей, сыграл на 14 турнирах и отличился на 13 из них. С 2008 года является капитаном сборной, в 2014 году стал её лучшим бомбардиром, а в 2016 году установил рекорд по количеству сыгранных матчей. В составе сборной стал чемпионом Европы 2016 и победителем Лиги наций УЕФА 2019. Первый европеец, который смог забить 100 или больше мячей в составе сборной.
+
+Один из самых узнаваемых спортсменов в мире, признан самым высокооплачиваемым спортсменом мира по версии журнала Forbes в 2016 и 2017 годах, а также самым известным спортсменом мира по версии ESPN в 2016, 2017, 2018 и 2019 годах. Time включил Роналду в список ста самых влиятельных людей в мире в 2014 году. C 2010 по 2019, заработав, по оценкам журнала Forbes, 800 млн долларов, занял второе место в списке самых высокооплачиваемых спортсменов десятилетия, уступив лишь Флойду Мейвезеру. В ноябре 2022 года стал первым в истории человеком, набравшим 500 миллионов подписчиков в Instagram.
+            </div>
+        </div>
+    </div>
 
 <!-- Футер -->
-<footer class="bg-light text-center text-lg-start">
+<footer id="footer" class="bg-dark text-center text-light">
     <div class="container p-4">
         <div class="row">
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Контакты</h5>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <h5>Контакты</h5>
                 <p>Email: example@example.com</p>
                 <p>Телефон: +7 (123) 456-78-90</p>
+                <p>Адрес: Улица Примерная, 1, Город</p>
             </div>
-            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Социальные сети</h5>
-                <a href="https://vk.com/championsleague" class="me-4 text-reset" target="_blank"><i class="fab fa-vk"></i></a>
-                <a href="https://t.me/s/UEFAChampionsLeagueRU" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://ok.ru/group/51667635339510" class="me-4 text-reset"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.tiktok.com/@championsleague" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
+            <div class="col-lg-6 col-md-6 mb-4">
+                <h5>Социальные сети</h5>
+                <a href="https://vk.com/championsleague" class="me-4 text-light" target="_blank"><i class="fab fa-vk"></i> ВКонтакте</a><br>
+                <a href="https://t.me/s/UEFAChampionsLeagueRU" class="me-4 text-light" target="_blank"><i class="fab fa-facebook-f"></i> Telegram</a><br>
+                <a href="https://ok.ru/group/51667635339510" class="me-4 text-light" target="_blank"><i class="fab fa-twitter"></i> Одноклассники</a><br>
+                <a href="https://www.tiktok.com/@championsleague" class="me-4 text-light" target="_blank"><i class="fab fa-instagram"></i> TikTok</a>
             </div>
         </div>
+    </div>
+    <div class="text-center p-3" style="background-color: black;">
+        © 2024 Лига чемпионов
     </div>
 </footer>
 
-<!-- Подключение Bootstrap JS и зависимостей -->
+<!-- Подключение Bootstrap JS и jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
